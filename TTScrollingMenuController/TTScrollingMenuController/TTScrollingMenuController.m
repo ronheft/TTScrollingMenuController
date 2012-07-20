@@ -73,6 +73,15 @@ static const float TAB_BAR_HEIGHT = 44.0f;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Public Methods
+
+- (UIViewController *)selectedViewController
+{
+    return [self.viewControllers objectAtIndex:contentContainerView.currentItemIndex];
+}
+
+#pragma mark - swipeView Data Source
+
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
 {
     return [self.viewControllers count];
@@ -110,6 +119,8 @@ static const float TAB_BAR_HEIGHT = 44.0f;
     }
 }
 
+#pragma mark - swipeView Delegate
+
 - (void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
     if ( [swipeView isEqual:menuButtonsContainerView] && index < [self.viewControllers count] ) {
@@ -119,14 +130,17 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 
 - (void)swipeViewCurrentItemIndexDidChange:(SwipeView *)swipeView
 {
-    if ( [swipeView isEqual:menuButtonsContainerView] ) {
+/*    if ( [swipeView isEqual:menuButtonsContainerView] ) {
         [contentContainerView scrollToItemAtIndex:swipeView.currentItemIndex animated:YES];
-    }
+    }*/
 }
 
-- (UIViewController *)selectedViewController
+- (void)swipeViewDidScroll:(SwipeView *)swipeView
 {
-    return [self.viewControllers objectAtIndex:contentContainerView.currentItemIndex];
+    if ( [swipeView isEqual:menuButtonsContainerView] ) {
+        CGFloat scrollFactor = 320.0/175.0;
+        contentContainerView.scrollView.contentOffset = CGPointMake(swipeView.scrollView.contentOffset.x*scrollFactor, contentContainerView.scrollView.contentOffset.y);
+    }
 }
 
 @end

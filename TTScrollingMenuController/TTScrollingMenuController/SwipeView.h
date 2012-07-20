@@ -108,6 +108,7 @@ SwipeViewAlignment;
 @property (nonatomic, assign) float decelerationRate;
 @property (nonatomic, readonly, getter = isDragging) BOOL dragging;
 @property (nonatomic, readonly, getter = isDecelerating) BOOL decelerating;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 - (void)reloadData;
 - (void)reloadItemAtIndex:(NSInteger)index;
