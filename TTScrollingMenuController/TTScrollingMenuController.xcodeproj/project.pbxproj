@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E44479BA15B834A30000A1CD /* TTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44479B915B834A30000A1CD /* TTTableViewController.m */; };
+		E451485715B9969300DAD8E9 /* TTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = E451485615B9969300DAD8E9 /* TTStatusBarOverlay.m */; };
 		E4A0958315B5B5C400D191A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A0958215B5B5C300D191A6 /* UIKit.framework */; };
 		E4A0958515B5B5C400D191A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A0958415B5B5C400D191A6 /* Foundation.framework */; };
 		E4A0958715B5B5C400D191A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A0958615B5B5C400D191A6 /* CoreGraphics.framework */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		E44479B815B834A30000A1CD /* TTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTableViewController.h; sourceTree = "<group>"; };
 		E44479B915B834A30000A1CD /* TTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTableViewController.m; sourceTree = "<group>"; };
+		E451485515B9969300DAD8E9 /* TTStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTStatusBarOverlay.h; sourceTree = "<group>"; };
+		E451485615B9969300DAD8E9 /* TTStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTStatusBarOverlay.m; sourceTree = "<group>"; };
 		E4A0957E15B5B5C300D191A6 /* TTScrollingMenuController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTScrollingMenuController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4A0958215B5B5C300D191A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E4A0958415B5B5C400D191A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +92,8 @@
 				E4A0959E15B5B66E00D191A6 /* TTScrollingMenuController.m */,
 				E44479B815B834A30000A1CD /* TTTableViewController.h */,
 				E44479B915B834A30000A1CD /* TTTableViewController.m */,
+				E451485515B9969300DAD8E9 /* TTStatusBarOverlay.h */,
+				E451485615B9969300DAD8E9 /* TTStatusBarOverlay.m */,
 				E4A0958915B5B5C400D191A6 /* Supporting Files */,
 			);
 			path = TTScrollingMenuController;
@@ -173,6 +178,7 @@
 				E4A0959F15B5B66E00D191A6 /* TTScrollingMenuController.m in Sources */,
 				E4A095A615B5D4ED00D191A6 /* SwipeView.m in Sources */,
 				E44479BA15B834A30000A1CD /* TTTableViewController.m in Sources */,
+				E451485715B9969300DAD8E9 /* TTStatusBarOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

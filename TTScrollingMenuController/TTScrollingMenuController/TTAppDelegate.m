@@ -14,6 +14,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
     UIViewController *redView = [[UIViewController alloc] init];
     redView.view.backgroundColor = [UIColor redColor];
     redView.title = @"Red View";

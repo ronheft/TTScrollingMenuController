@@ -7,27 +7,32 @@
 //
 
 #import "TTScrollingMenuController.h"
+#import "TTStatusBarOverlay.h"
 
 static const float TAB_BAR_HEIGHT = 44.0f;
 
 @interface TTScrollingMenuController ()
 
+@property (strong, nonatomic) TTStatusBarOverlay *statusBarOverlay;
+@property (strong, nonatomic) SwipeView *menuButtonsContainerView;
+@property (strong, nonatomic) SwipeView *contentContainerView;
+
 @end
 
-@implementation TTScrollingMenuController {
-    SwipeView *menuButtonsContainerView;
-	SwipeView *contentContainerView;
-}
+@implementation TTScrollingMenuController
 
 @synthesize viewControllers;
 @synthesize selectedViewController;
 @synthesize selectedIndex;
+@synthesize menuButtonsContainerView;
+@synthesize contentContainerView;
+@synthesize statusBarOverlay;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.statusBarOverlay = [[TTStatusBarOverlay alloc] initWithFrame:CGRectZero];
     }
     return self;
 }
@@ -38,29 +43,29 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 	
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
-    menuButtonsContainerView = [[SwipeView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, TAB_BAR_HEIGHT)];
-    menuButtonsContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    menuButtonsContainerView.backgroundColor = [UIColor purpleColor];
-    menuButtonsContainerView.alignment = SwipeViewAlignmentCenter;
-    menuButtonsContainerView.pagingEnabled = YES;
-    menuButtonsContainerView.wrapEnabled = NO;
-    menuButtonsContainerView.itemsPerPage = 1;
-    menuButtonsContainerView.truncateFinalPage = YES;
-    menuButtonsContainerView.delegate = self;
-    menuButtonsContainerView.dataSource = self;
-    [self.view addSubview:menuButtonsContainerView];
+    self.menuButtonsContainerView = [[SwipeView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, TAB_BAR_HEIGHT)];
+    self.menuButtonsContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.menuButtonsContainerView.backgroundColor = [UIColor purpleColor];
+    self.menuButtonsContainerView.alignment = SwipeViewAlignmentCenter;
+    self.menuButtonsContainerView.pagingEnabled = YES;
+    self.menuButtonsContainerView.wrapEnabled = NO;
+    self.menuButtonsContainerView.itemsPerPage = 1;
+    self.menuButtonsContainerView.truncateFinalPage = YES;
+    self.menuButtonsContainerView.delegate = self;
+    self.menuButtonsContainerView.dataSource = self;
+    [self.view addSubview:self.menuButtonsContainerView];
     
-    contentContainerView = [[SwipeView alloc] initWithFrame:CGRectMake(0, TAB_BAR_HEIGHT, self.view.bounds.size.width, self.view.bounds.size.height-TAB_BAR_HEIGHT)];
-    contentContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    contentContainerView.alignment = SwipeViewAlignmentCenter;
-    contentContainerView.pagingEnabled = YES;
-    contentContainerView.wrapEnabled = NO;
-    contentContainerView.itemsPerPage = 1;
-    contentContainerView.truncateFinalPage = YES;
-    contentContainerView.delegate = self;
-    contentContainerView.dataSource = self;
-    contentContainerView.scrollEnabled = NO;
-    [self.view addSubview:contentContainerView];
+    self.contentContainerView = [[SwipeView alloc] initWithFrame:CGRectMake(0, TAB_BAR_HEIGHT, self.view.bounds.size.width, self.view.bounds.size.height-TAB_BAR_HEIGHT)];
+    self.contentContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.contentContainerView.alignment = SwipeViewAlignmentCenter;
+    self.contentContainerView.pagingEnabled = YES;
+    self.contentContainerView.wrapEnabled = NO;
+    self.contentContainerView.itemsPerPage = 1;
+    self.contentContainerView.truncateFinalPage = YES;
+    self.contentContainerView.delegate = self;
+    self.contentContainerView.dataSource = self;
+    self.contentContainerView.scrollEnabled = NO;
+    [self.view addSubview:self.contentContainerView];
 }
 
 - (void)viewDidUnload
@@ -77,7 +82,7 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 
 - (UIViewController *)selectedViewController
 {
-    return [self.viewControllers objectAtIndex:contentContainerView.currentItemIndex];
+    return [self.viewControllers objectAtIndex:self.contentContainerView.currentItemIndex];
 }
 
 #pragma mark - swipeView Data Source
@@ -91,7 +96,7 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 {
     if (view == nil)
     {
-        if ( [swipeView isEqual:menuButtonsContainerView] ) {
+        if ( [swipeView isEqual:self.menuButtonsContainerView] ) {
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 175, TAB_BAR_HEIGHT)];
             label.text = [[self.viewControllers objectAtIndex:index] title];
             label.textAlignment = UITextAlignmentCenter;
@@ -112,7 +117,7 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 
 - (CGFloat)swipeViewItemWidth:(SwipeView *)swipeView
 {
-    if ( [swipeView isEqual:contentContainerView] ) {
+    if ( [swipeView isEqual:self.contentContainerView] ) {
         return self.view.bounds.size.width;
     } else {
         return 175.0;
@@ -123,8 +128,10 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 
 - (void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
-    if ( [swipeView isEqual:menuButtonsContainerView] && index < [self.viewControllers count] ) {
+    if ( [swipeView isEqual:self.menuButtonsContainerView] && index < [self.viewControllers count] ) {
+        [self.statusBarOverlay fadeIn];
         [swipeView scrollToItemAtIndex:index animated:YES];
+        [self.statusBarOverlay fadeOut];
     }
 }
 
@@ -137,9 +144,23 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 
 - (void)swipeViewDidScroll:(SwipeView *)swipeView
 {
-    if ( [swipeView isEqual:menuButtonsContainerView] ) {
+    if ( [swipeView isEqual:self.menuButtonsContainerView] ) {
         CGFloat scrollFactor = 320.0/175.0;
-        contentContainerView.scrollView.contentOffset = CGPointMake(swipeView.scrollView.contentOffset.x*scrollFactor, contentContainerView.scrollView.contentOffset.y);
+        self.contentContainerView.scrollView.contentOffset = CGPointMake(swipeView.scrollView.contentOffset.x*scrollFactor, self.contentContainerView.scrollView.contentOffset.y);
+    }
+}
+
+- (void)swipeViewWillBeginDragging:(SwipeView *)swipeView
+{
+    if ( [swipeView isEqual:self.menuButtonsContainerView] ) {
+        [self.statusBarOverlay fadeIn];
+    }
+}
+
+- (void)swipeViewDidEndDragging:(SwipeView *)swipeView willDecelerate:(BOOL)decelerate
+{
+    if ( [swipeView isEqual:self.menuButtonsContainerView] ) {
+        [self.statusBarOverlay fadeOut];
     }
 }
 
