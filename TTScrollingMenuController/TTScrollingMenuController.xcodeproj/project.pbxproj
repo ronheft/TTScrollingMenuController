@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E44479BA15B834A30000A1CD /* TTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44479B915B834A30000A1CD /* TTTableViewController.m */; };
+		E4A0958315B5B5C400D191A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A0958215B5B5C300D191A6 /* UIKit.framework */; };
+		E4A0958515B5B5C400D191A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A0958415B5B5C400D191A6 /* Foundation.framework */; };
+		E4A0958715B5B5C400D191A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A0958615B5B5C400D191A6 /* CoreGraphics.framework */; };
+		E4A0958D15B5B5C400D191A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4A0958B15B5B5C400D191A6 /* InfoPlist.strings */; };
+		E4A0958F15B5B5C400D191A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A0958E15B5B5C400D191A6 /* main.m */; };
+		E4A0959315B5B5C400D191A6 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A0959215B5B5C400D191A6 /* TTAppDelegate.m */; };
+		E4A0959F15B5B66E00D191A6 /* TTScrollingMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A0959E15B5B66E00D191A6 /* TTScrollingMenuController.m */; };
+		E4A095A615B5D4ED00D191A6 /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A095A515B5D4ED00D191A6 /* SwipeView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E44479B815B834A30000A1CD /* TTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTableViewController.h; sourceTree = "<group>"; };
+		E44479B915B834A30000A1CD /* TTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTableViewController.m; sourceTree = "<group>"; };
+		E4A0957E15B5B5C300D191A6 /* TTScrollingMenuController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTScrollingMenuController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A0958215B5B5C300D191A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E4A0958415B5B5C400D191A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E4A0958615B5B5C400D191A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E4A0958A15B5B5C400D191A6 /* TTScrollingMenuController-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TTScrollingMenuController-Info.plist"; sourceTree = "<group>"; };
+		E4A0958C15B5B5C400D191A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4A0958E15B5B5C400D191A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4A0959015B5B5C400D191A6 /* TTScrollingMenuController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TTScrollingMenuController-Prefix.pch"; sourceTree = "<group>"; };
+		E4A0959115B5B5C400D191A6 /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
+		E4A0959215B5B5C400D191A6 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
+		E4A0959D15B5B66E00D191A6 /* TTScrollingMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTScrollingMenuController.h; sourceTree = "<group>"; };
+		E4A0959E15B5B66E00D191A6 /* TTScrollingMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTScrollingMenuController.m; sourceTree = "<group>"; };
+		E4A095A415B5D4ED00D191A6 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
+		E4A095A515B5D4ED00D191A6 /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4A0957B15B5B5C300D191A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A0958315B5B5C400D191A6 /* UIKit.framework in Frameworks */,
+				E4A0958515B5B5C400D191A6 /* Foundation.framework in Frameworks */,
+				E4A0958715B5B5C400D191A6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4A0957315B5B5C300D191A6 = {
+			isa = PBXGroup;
+			children = (
+				E4A0958815B5B5C400D191A6 /* TTScrollingMenuController */,
+				E4A0958115B5B5C300D191A6 /* Frameworks */,
+				E4A0957F15B5B5C300D191A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4A0957F15B5B5C300D191A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4A0957E15B5B5C300D191A6 /* TTScrollingMenuController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4A0958115B5B5C300D191A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4A0958215B5B5C300D191A6 /* UIKit.framework */,
+				E4A0958415B5B5C400D191A6 /* Foundation.framework */,
+				E4A0958615B5B5C400D191A6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4A0958815B5B5C400D191A6 /* TTScrollingMenuController */ = {
+			isa = PBXGroup;
+			children = (
+				E4A095A415B5D4ED00D191A6 /* SwipeView.h */,
+				E4A095A515B5D4ED00D191A6 /* SwipeView.m */,
+				E4A0959115B5B5C400D191A6 /* TTAppDelegate.h */,
+				E4A0959215B5B5C400D191A6 /* TTAppDelegate.m */,
+				E4A0959D15B5B66E00D191A6 /* TTScrollingMenuController.h */,
+				E4A0959E15B5B66E00D191A6 /* TTScrollingMenuController.m */,
+				E44479B815B834A30000A1CD /* TTTableViewController.h */,
+				E44479B915B834A30000A1CD /* TTTableViewController.m */,
+				E4A0958915B5B5C400D191A6 /* Supporting Files */,
+			);
+			path = TTScrollingMenuController;
+			sourceTree = "<group>";
+		};
+		E4A0958915B5B5C400D191A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4A0958A15B5B5C400D191A6 /* TTScrollingMenuController-Info.plist */,
+				E4A0958B15B5B5C400D191A6 /* InfoPlist.strings */,
+				E4A0958E15B5B5C400D191A6 /* main.m */,
+				E4A0959015B5B5C400D191A6 /* TTScrollingMenuController-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4A0957D15B5B5C300D191A6 /* TTScrollingMenuController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4A0959615B5B5C400D191A6 /* Build configuration list for PBXNativeTarget "TTScrollingMenuController" */;
+			buildPhases = (
+				E4A0957A15B5B5C300D191A6 /* Sources */,
+				E4A0957B15B5B5C300D191A6 /* Frameworks */,
+				E4A0957C15B5B5C300D191A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TTScrollingMenuController;
+			productName = TTScrollingMenuController;
+			productReference = E4A0957E15B5B5C300D191A6 /* TTScrollingMenuController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4A0957515B5B5C300D191A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TT;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Trifecta Technologies, Inc.";
+			};
+			buildConfigurationList = E4A0957815B5B5C300D191A6 /* Build configuration list for PBXProject "TTScrollingMenuController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E4A0957315B5B5C300D191A6;
+			productRefGroup = E4A0957F15B5B5C300D191A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4A0957D15B5B5C300D191A6 /* TTScrollingMenuController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4A0957C15B5B5C300D191A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A0958D15B5B5C400D191A6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4A0957A15B5B5C300D191A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4A0958F15B5B5C400D191A6 /* main.m in Sources */,
+				E4A0959315B5B5C400D191A6 /* TTAppDelegate.m in Sources */,
+				E4A0959F15B5B66E00D191A6 /* TTScrollingMenuController.m in Sources */,
+				E4A095A615B5D4ED00D191A6 /* SwipeView.m in Sources */,
+				E44479BA15B834A30000A1CD /* TTTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E4A0958B15B5B5C400D191A6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4A0958C15B5B5C400D191A6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4A0959415B5B5C400D191A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E4A0959515B5B5C400D191A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4A0959715B5B5C400D191A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTScrollingMenuController/TTScrollingMenuController-Prefix.pch";
+				INFOPLIST_FILE = "TTScrollingMenuController/TTScrollingMenuController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4A0959815B5B5C400D191A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTScrollingMenuController/TTScrollingMenuController-Prefix.pch";
+				INFOPLIST_FILE = "TTScrollingMenuController/TTScrollingMenuController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4A0957815B5B5C300D191A6 /* Build configuration list for PBXProject "TTScrollingMenuController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A0959415B5B5C400D191A6 /* Debug */,
+				E4A0959515B5B5C400D191A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4A0959615B5B5C400D191A6 /* Build configuration list for PBXNativeTarget "TTScrollingMenuController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4A0959715B5B5C400D191A6 /* Debug */,
+				E4A0959815B5B5C400D191A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4A0957515B5B5C300D191A6 /* Project object */;
+}
