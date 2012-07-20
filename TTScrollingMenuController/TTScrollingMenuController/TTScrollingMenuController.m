@@ -16,6 +16,7 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 @property (strong, nonatomic) TTStatusBarOverlay *statusBarOverlay;
 @property (strong, nonatomic) SwipeView *menuButtonsContainerView;
 @property (strong, nonatomic) SwipeView *contentContainerView;
+@property (assign, nonatomic) NSInteger previousMenuIndex;
 
 @end
 
@@ -27,6 +28,7 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 @synthesize menuButtonsContainerView;
 @synthesize contentContainerView;
 @synthesize statusBarOverlay;
+@synthesize previousMenuIndex;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -83,6 +85,24 @@ static const float TAB_BAR_HEIGHT = 44.0f;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Private Methods
+
+- (void)fadeOutMenu:(NSInteger)index
+{
+    UIView *view = [self.menuButtonsContainerView itemViewAtIndex:index];
+    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        view.alpha = 0.7f;
+    } completion:nil];
+}
+
+- (void)fadeInMenu:(NSInteger)index
+{
+    UIView *view = [self.menuButtonsContainerView itemViewAtIndex:index];
+    [UIView animateWithDuration:0.25f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+        view.alpha = 1.0f;
+    } completion:nil];
+}
+
 #pragma mark - Public Methods
 
 - (UIViewController *)selectedViewController
@@ -110,6 +130,7 @@ static const float TAB_BAR_HEIGHT = 44.0f;
             label.shadowOffset = CGSizeMake(0, 1);
             label.shadowColor = [UIColor blackColor];
             label.backgroundColor = [UIColor clearColor];
+            label.alpha = (!self.previousMenuIndex && index == 0) ? 1.0f : 0.7f;
             
             view = label;
         } else {
@@ -145,6 +166,10 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 {
     if ( [swipeView isEqual:menuButtonsContainerView] ) {
         [self.statusBarOverlay setCurrentPage:swipeView.currentPage];
+        
+        [self fadeOutMenu:self.previousMenuIndex];
+        [self fadeInMenu:swipeView.currentPage];
+        self.previousMenuIndex = swipeView.currentPage;
     }
 }
 
