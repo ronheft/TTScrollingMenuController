@@ -10,25 +10,26 @@
 
 @interface TTStatusBarOverlay ()
     
-@property (strong, nonatomic) UIView *view;
-@property (assign, nonatomic) BOOL animating;
+@property (strong, nonatomic) UIPageControl *pageControl;
 
 @end
 
 @implementation TTStatusBarOverlay
 
-@synthesize view;
-@synthesize animating;
+@synthesize pageControl;
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         self.windowLevel = UIWindowLevelStatusBar+1.0f;
         self.frame = [[UIApplication sharedApplication] statusBarFrame];
         
-        self.view = [[UIView alloc] initWithFrame:self.frame];
-        self.view.backgroundColor = [UIColor yellowColor];
-        self.view.alpha = 0.0f;
-        [self addSubview:view];
+        self.pageControl = [[UIPageControl alloc] initWithFrame:self.frame];
+        self.pageControl.backgroundColor = [UIColor blackColor];
+        self.pageControl.alpha = 0.0f;
+        self.pageControl.numberOfPages = 1;
+        self.pageControl.hidesForSinglePage = NO;
+        self.pageControl.enabled = NO;
+        [self addSubview:self.pageControl];
         
         self.hidden = NO;
     }
@@ -38,19 +39,25 @@
 - (void)fadeIn
 {
     [UIView animateWithDuration:0.2f delay:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-        self.view.alpha = 1.0f;
-    } completion:^(BOOL finished) {
-        self.animating = NO;
-    }];
+        self.pageControl.alpha = 1.0f;
+    } completion:nil];
 }
 
 - (void)fadeOut
 {
-    [UIView animateWithDuration:0.5f delay:1.0f options:UIViewAnimationOptionTransitionNone animations:^{
-        self.view.alpha = 0.0f;
-    } completion:^(BOOL finished) {
-        self.animating = NO;
-    }];
+    [UIView animateWithDuration:0.5f delay:1.5f options:UIViewAnimationOptionTransitionNone animations:^{
+        self.pageControl.alpha = 0.0f;
+    } completion:nil];
+}
+
+- (void)setNumberOfPages:(NSInteger)numberOfPages
+{
+    self.pageControl.numberOfPages = numberOfPages;
+}
+
+- (void)setCurrentPage:(NSInteger)currentPage
+{
+    self.pageControl.currentPage = currentPage;
 }
 
 @end

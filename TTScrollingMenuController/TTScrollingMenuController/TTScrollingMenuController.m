@@ -73,6 +73,11 @@ static const float TAB_BAR_HEIGHT = 44.0f;
     [super viewDidUnload];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.statusBarOverlay setNumberOfPages:[self.viewControllers count]];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -129,6 +134,7 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 - (void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
 {
     if ( [swipeView isEqual:self.menuButtonsContainerView] && index < [self.viewControllers count] ) {
+        [self.statusBarOverlay setCurrentPage:index];
         [self.statusBarOverlay fadeIn];
         [swipeView scrollToItemAtIndex:index animated:YES];
         [self.statusBarOverlay fadeOut];
@@ -137,9 +143,9 @@ static const float TAB_BAR_HEIGHT = 44.0f;
 
 - (void)swipeViewCurrentItemIndexDidChange:(SwipeView *)swipeView
 {
-/*    if ( [swipeView isEqual:menuButtonsContainerView] ) {
-        [contentContainerView scrollToItemAtIndex:swipeView.currentItemIndex animated:YES];
-    }*/
+    if ( [swipeView isEqual:menuButtonsContainerView] ) {
+        [self.statusBarOverlay setCurrentPage:swipeView.currentPage];
+    }
 }
 
 - (void)swipeViewDidScroll:(SwipeView *)swipeView

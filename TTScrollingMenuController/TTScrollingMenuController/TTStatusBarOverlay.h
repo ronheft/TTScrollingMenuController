@@ -12,5 +12,7 @@
 
 - (void)fadeIn;
 - (void)fadeOut;
+- (void)setNumberOfPages:(NSInteger)numberOfPages;
+- (void)setCurrentPage:(NSInteger)currentPage;
 
 @end
